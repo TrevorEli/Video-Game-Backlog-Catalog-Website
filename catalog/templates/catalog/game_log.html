@@ -3,7 +3,6 @@
     New Game Entry
 {% endblock %}
 {% block content %}
-    <h1>hello</h1>
     <form method="POST" class="log-form">
         {% csrf_token %}
         {{ form.as_p }}
