@@ -13,6 +13,8 @@ Game Display
                 <th>Time</th>
                 <th>Game Title</th>
                 <th>Year Released</th>
+                <th>Console</th>
+                <th>How much you want to play</th>
             </tr>
             </thead>
             <tbody>
@@ -25,6 +27,12 @@ Game Display
                     </td>
                     <td>
                         {{ message.year_released }}
+                    </td>
+                    <td>
+                        {{ message.console }}
+                    </td>
+                    <td>
+                        {{ message.want_to_play_degree }}
                     </td>
                 </tr>
             {% endfor %}
