@@ -3,5 +3,46 @@
     Home
 {% endblock %}
 {% block content %}
-A catalog for a gamer's backlog.
+    <h1>Video Game Backlog catalog</h1>
+
+    <h3>Latest Game</h3>
+
+    {% if game_list %}
+        <table class="game_list">
+            <thead>
+            <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Game Title</th>
+                <th>Year Released</th>
+                <th>Console</th>
+                <th>How much you want to play</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for game in game_list %}
+                {% if forloop.first %}
+                    <tr>
+                        <td>{{ game.log_date | date:'d M Y' }}</td>
+                        <td>{{ game.log_date | time:'H:i:s' }}</td>
+                        <td>
+                            {{ game.game_title }}
+                        </td>
+                        <td>
+                            {{ game.year_released }}
+                        </td>
+                        <td>
+                            {{ game.console }}
+                        </td>
+                        <td>
+                            {{ game.want_to_play_degree }}
+                        </td>
+                    </tr>
+                    {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No games have been logged. Use the <a href="{% url 'new_game' %}">New Game form</a>.</p>
+    {% endif %}
 {% endblock %}

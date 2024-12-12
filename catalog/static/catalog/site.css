@@ -35,7 +35,7 @@ input[name=game_title] {
     width: 80%;
 }
 
-.message_list th,td {
+.game_list th,td {
     text-align: left;
     padding-right: 15px;
 }

@@ -5,8 +5,8 @@ Game Display
 {% block content %}
     <h2>Game List</h2>
 
-    {% if message_list %}
-        <table class="message_list">
+    {% if game_list %}
+        <table class="game_list">
             <thead>
             <tr>
                 <th>Date</th>
@@ -18,23 +18,23 @@ Game Display
             </tr>
             </thead>
             <tbody>
-            {% for message in message_list %}
-                <tr>
-                    <td>{{ message.log_date | date:'d M Y' }}</td>
-                    <td>{{ message.log_date | time:'H:i:s' }}</td>
-                    <td>
-                        {{ message.game_title }}
-                    </td>
-                    <td>
-                        {{ message.year_released }}
-                    </td>
-                    <td>
-                        {{ message.console }}
-                    </td>
-                    <td>
-                        {{ message.want_to_play_degree }}
-                    </td>
-                </tr>
+            {% for game in game_list %}
+                    <tr>
+                        <td>{{ game.log_date | date:'d M Y' }}</td>
+                        <td>{{ game.log_date | time:'H:i:s' }}</td>
+                        <td>
+                            {{ game.game_title }}
+                        </td>
+                        <td>
+                            {{ game.year_released }}
+                        </td>
+                        <td>
+                            {{ game.console }}
+                        </td>
+                        <td>
+                            {{ game.want_to_play_degree }}
+                        </td>
+                    </tr>
             {% endfor %}
             </tbody>
         </table>

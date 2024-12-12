@@ -11,7 +11,7 @@ from django.views.generic import ListView
 # Remove the old home function if you want; it's no longer used
 
 class DisplayListView(ListView):
-    """Renders the list, with a list of all messages."""
+    """Renders the list, with a list of all games."""
     model = GameLog
 
     def get_context_data(self, **kwargs):
@@ -36,6 +36,3 @@ def game_log(request):
 def home(request):
     return render(request, "catalog/home.html")
 
-"""def display_log(request):
-    
-    #return render(request, "catalog/display_log.html")"""
